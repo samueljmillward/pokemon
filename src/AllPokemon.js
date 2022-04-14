@@ -8,10 +8,22 @@ const AllPokemon = () => {
   const [pokemonId, setPokemonId] = useState(1);
 
   useEffect(() => {
-    fetchPokemon().then((data) => {
-      setPokemon(data);
-    });
+    fetchPokemon().then((data) => setPokemon(data));
   }, []);
+
+  const pagination = (event) => {
+    return event.target === 'Next' ? 
+        fetchPokemon(pokemonId - 21)
+        .then((data) => {
+            setPokemon(data);
+            setPokemonId(initialState => initialState - 20); 
+        }) :
+        fetchPokemon(pokemonId + 19)
+            .then((data) => {
+                setPokemon(data);
+                setPokemonId(initialState => initialState + 20);
+    });
+  };
 
   return (
     <>
@@ -21,24 +33,8 @@ const AllPokemon = () => {
                 return <Pokemon {...pokemon} id={pokemonId + index} key={index} />
             })}
         </div>
-        <button onClick={() => {
-            fetchPokemon(pokemonId - 21)
-            .then((data) => {
-                setPokemon(data);
-                setPokemonId((initialState) => {
-                  return initialState - 20 
-                });
-              });
-        }}>Previous</button>
-        <button onClick={() => {
-            fetchPokemon(pokemonId + 19)
-            .then((data) => {
-                setPokemon(data);
-                setPokemonId((initialState) => {
-                  return initialState + 20 
-                });
-              });
-        }}>Next</button>     
+        <button onClick={pagination}>Previous</button>
+        <button onClick={pagination}>Next</button>     
     </>
   )
 }
