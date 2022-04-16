@@ -1,15 +1,18 @@
-import AllPokemon from './AllPokemon';
-// import Pokemon from './components/Pokemon';
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import AllPokemon from './AllPokemon'
+
+import PokemonLogo from './assets/PokemonLogo.png'
 
 const App = () => {
-    return (
+  return (
     <>
-        <div className='App'>
-            <h1>Pokedex</h1>
-            <AllPokemon />
+      <div className="App">
+        <div class="flex justify-center items-center">
+          <img src={PokemonLogo} alt="logo" />
         </div>
+        <AllPokemon />
+      </div>
     </>
-)};
-  
-export default App;
+  )
+}
+
+export default App
