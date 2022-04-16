@@ -25,6 +25,8 @@ const AllPokemon = () => {
 
   return (
     <>
+      <label htmlFor="input">Search</label>
+      <input />
       <div class="flex justify-center items-center">
         <div class="grid grid-cols-4 gap-x-64 gap-y-8">
           {pokemon['results'] &&

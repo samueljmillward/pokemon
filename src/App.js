@@ -1,14 +1,11 @@
 import AllPokemon from './AllPokemon'
-
-import PokemonLogo from './assets/PokemonLogo.png'
+import Header from './components/Header'
 
 const App = () => {
   return (
     <>
       <div className="App">
-        <div class="flex justify-center items-center mb-12">
-          <img class="max-h-72" src={PokemonLogo} alt="logo" />
-        </div>
+        <Header />
         <AllPokemon />
       </div>
     </>
