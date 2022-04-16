@@ -12,7 +12,8 @@ const AllPokemon = () => {
   }, [])
 
   const pagination = (event) => {
-    return event.target === 'Next'
+    console.log(event.target.value)
+    return event.target.value === 'Previous'
       ? fetchPokemon(pokemonId - 21).then((data) => {
           setPokemon(data)
           setPokemonId((initialState) => initialState - 20)
@@ -22,12 +23,9 @@ const AllPokemon = () => {
           setPokemonId((initialState) => initialState + 20)
         })
   }
-
   return (
     <>
-      <label htmlFor="input">Search</label>
-      <input />
-      <div class="flex justify-center items-center">
+      <div class="flex flex-col justify-center items-center">
         <div class="grid grid-cols-4 gap-x-64 gap-y-8">
           {pokemon['results'] &&
             pokemon['results'].map((pokemon, index) => {
@@ -39,12 +37,14 @@ const AllPokemon = () => {
         <button
           class="px-6 py-2 text-orange-100 bg-orange-400 rounded hover:bg-orange-500 m-2"
           onClick={pagination}
+          value="Previous"
         >
           Previous
         </button>
         <button
           class="px-6 py-2 rounded bg-rose-400 hover:bg-rose-500 text-rose-100 m-2"
           onClick={pagination}
+          value="Next"
         >
           Next
         </button>
