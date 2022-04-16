@@ -26,14 +26,14 @@ const AllPokemon = () => {
   return (
     <>
       <div class="flex justify-center items-center">
-        <div class="grid grid-cols-4 gap-x-64">
+        <div class="grid grid-cols-4 gap-x-64 gap-y-8">
           {pokemon['results'] &&
             pokemon['results'].map((pokemon, index) => {
               return <Pokemon {...pokemon} id={pokemonId + index} key={index} />
             })}
         </div>
       </div>
-      <div class="flex justify-center mt-16">
+      <div class="flex justify-center mt-6">
         <button
           class="px-6 py-2 text-orange-100 bg-orange-400 rounded hover:bg-orange-500 m-2"
           onClick={pagination}
