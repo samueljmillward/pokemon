@@ -5,8 +5,8 @@ import PokemonLogo from '../assets/PokemonLogo.png'
 const Header = () => {
   return (
     <div>
-      <div class="flex justify-center items-center mb-12">
-        <img class="max-h-72" src={PokemonLogo} alt="logo" />
+      <div className="flex justify-center items-center mb-12">
+        <img className="max-h-52" src={PokemonLogo} alt="logo" />
       </div>
     </div>
   )

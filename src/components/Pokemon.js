@@ -1,18 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
+import pokeball from '../assets/pokeball.png'
 
 const Pokemon = ({ name, id }) => {
+  const [favourites, setFavourites] = useState([])
+
   return (
-    <div class="flex flex-col items-center">
-      <img
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
-        alt="Pokemon"
-      />
-      <h4 class="text-2xl">
-        {name.replace(/\b\w/g, (capitalFirstCharacter) =>
-          capitalFirstCharacter.toUpperCase()
-        )}
-      </h4>
-    </div>
+    <>
+      <div>
+        <button
+          type="button"
+          onClick={() => {
+            setFavourites([...favourites, id])
+            console.log(id)
+            console.log(favourites)
+          }}
+        >
+          <img src={pokeball} className="h-9 w-9 flex" alt="" />
+        </button>
+        <div className="flex flex-col items-center">
+          <img
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+            alt="Pokemon"
+          />
+          <h4 className="text-2xl">
+            {name.replace(/\b\w/g, (capitalFirstCharacter) =>
+              capitalFirstCharacter.toUpperCase()
+            )}
+          </h4>
+        </div>
+      </div>
+    </>
   )
 }
 
