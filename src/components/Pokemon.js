@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import PokemonContext from '../PokemonContext'
+
 import pokeball from '../assets/pokeball.png'
 
 const Pokemon = ({ name, id }) => {
-  const [favourites, setFavourites] = useState([])
+  const { addToFavourites } = useContext(PokemonContext)
 
   return (
     <>
@@ -11,12 +13,10 @@ const Pokemon = ({ name, id }) => {
         <button
           type="button"
           onClick={() => {
-            setFavourites([...favourites, id])
-            console.log(id)
-            console.log(favourites)
+            addToFavourites(name, id)
           }}
         >
-          <img src={pokeball} className="h-9 w-9 flex" alt="" />
+          <img src={pokeball} className="h-6 flex" alt="" />
         </button>
         <div className="flex flex-col items-center">
           <Link to={`/pokemoncard/${id}`}>
@@ -24,7 +24,7 @@ const Pokemon = ({ name, id }) => {
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
               alt="Pokemon"
             />
-            <h4 className="text-2xl">
+            <h4 className="text-lg">
               {name.replace(/\b\w/g, (capitalFirstCharacter) =>
                 capitalFirstCharacter.toUpperCase()
               )}

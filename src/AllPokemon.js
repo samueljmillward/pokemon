@@ -13,13 +13,13 @@ const AllPokemon = () => {
 
   const pagination = (event) => {
     return event.target.value === 'Previous'
-      ? fetchPokemon(pokemonId - 21).then((data) => {
+      ? fetchPokemon(pokemonId - 17).then((data) => {
           setPokemon(data)
-          setPokemonId((initialState) => initialState - 20)
+          setPokemonId((initialState) => initialState - 16)
         })
-      : fetchPokemon(pokemonId + 19).then((data) => {
+      : fetchPokemon(pokemonId + 15).then((data) => {
           setPokemon(data)
-          setPokemonId((initialState) => initialState + 20)
+          setPokemonId((initialState) => initialState + 16)
         })
   }
 

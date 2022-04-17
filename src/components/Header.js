@@ -8,7 +8,7 @@ const Header = () => {
     <div>
       <div className="flex justify-center items-center mb-12">
         <Link to="/">
-          <img className="max-h-52" src={PokemonLogo} alt="logo" />
+          <img className="max-h-32" src={PokemonLogo} alt="logo" />
         </Link>
       </div>
     </div>
