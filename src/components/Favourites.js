@@ -7,9 +7,9 @@ const Favourites = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center">
-        <div className="grid grid-cols-4 gap-x-64 gap-y-8">{pokemonData.map((pokemon) => {
+        <div className="grid grid-cols-4 gap-x-64 gap-y-8">{pokemonData.map((pokemon, index) => {
           return (
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center text-lg" key={index}>
               <Link to={`/pokemoncard/${pokemon.id}`}>
               <img
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}

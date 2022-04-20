@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Pokemon from './components/Pokemon'
 
+
 import { fetchPokemon } from './services/fetchPokemon'
 
 const AllPokemon = () => {
@@ -42,7 +43,7 @@ const AllPokemon = () => {
           Previous
         </button>
         <button
-          className="px-6 py-2 rounded bg-rose-400 hover:bg-rose-500 text-rose-100 m-2"
+          className="px-6 py-2 text-rose-100 bg-rose-400 rounded hover:bg-rose-500 m-2"
           onClick={pagination}
           value="Next"
         >

@@ -11,6 +11,11 @@ export function PokemonProvider({ children }) {
   }
 
   useEffect(() => {
+    const localStorageData = window.localStorage.getItem('Pokemon');
+    if (localStorageData !== null) setFavourites(JSON.parse(localStorageData))
+  }, []);
+
+  useEffect(() => {
     window.localStorage.setItem('Pokemon', JSON.stringify(favourites))
   }, [favourites])
 
