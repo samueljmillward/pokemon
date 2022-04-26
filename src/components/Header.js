@@ -8,11 +8,11 @@ const Header = () => {
   return (
     <>
       <Link to="/favourites">
-          <img className="max-h-12" src={PokemonFileIcon} alt="logo" />
+          <img className="max-h-12" src={PokemonFileIcon} alt="Favourites logo" />
       </Link>
       <div className="flex justify-center items-center mb-12">
         <Link to="/">
-          <img className="max-h-32" src={PokemonLogo} alt="logo" />
+          <img className="max-h-32" src={PokemonLogo} alt="App logo" />
         </Link>
       </div>
     </>

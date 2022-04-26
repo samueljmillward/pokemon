@@ -16,7 +16,7 @@ const Pokemon = ({ name, id }) => {
             addToFavourites(name, id)
           }}
         >
-          <img src={pokeball} className="h-6 flex" alt="" />
+          <img src={pokeball} className="h-6 flex" alt="Add to favourites" />
         </button>
         <div className="flex flex-col items-center">
           <Link to={`/pokemoncard/${id}`}>
